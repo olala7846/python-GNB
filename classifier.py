@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import defaultdict
 
 
 class GNB(object):
@@ -22,6 +23,13 @@ class GNB(object):
         labels - array of N labels
           - Each label is one of "left", "keep", or "right".
         """
+        num_features = len(data[0])
+
+        classes = defaultdict(list)
+        for a_data, label in zip(data, labels):
+            classes[label].push(a_data)
+
+
 
         pass
 
